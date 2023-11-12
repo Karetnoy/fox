@@ -13,7 +13,7 @@ export  const useRepoStore = defineStore("RepoStore", ()=>{
   
 
   const octokit = new Octokit({
-        auth: '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'
+        auth: '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'
       })
   async function getRepositories(text: string, perPageNum: number, pageNumber: number) {
     isLoading.value = true
