@@ -1,0 +1,38 @@
+<script lang="ts" setup >
+import { computed } from 'vue';
+
+export default {
+    props: {
+        maxVisibleButtons: {
+            type: Number,
+            required: false,
+            default: 3
+        },
+        totalPages: {
+            type: Number,
+            required: true
+        },
+        perPage: {
+            type: Number,
+            required: true
+        },
+        currentPage: {
+            type: Number,
+            required: true
+        },
+    },
+};
+
+computed: {
+    startPage
+}
+
+</script>
+
+<template>
+    <button>First</button>
+    <button>Prev</button>
+    <button v-for="page in pages" :key="page.name" :disabled="page.isDisabled">{{ page.name }}</button>
+    <button>Next</button>
+    <button>Last</button>
+</template>
